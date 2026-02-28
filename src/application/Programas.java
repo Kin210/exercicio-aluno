@@ -31,7 +31,7 @@ import java.util.Scanner;
           System.out.print("Nota Final: ");
            n5 = sc.nextDouble();
 
-         double media = n1 + n2 + n3 + n4 + n5 / 5;
+         double media = (n1 + n2 + n3 + n4 + n5) / 5;
 
          System.out.printf("Media do aluno: %.2f%n", media);
          
