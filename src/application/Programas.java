@@ -37,8 +37,11 @@ import java.util.Scanner;
          
          if (media >= 7.00) {
             System.out.println("Aprovado");
-         }else 
-            System.out.println("Reprovado");
+           }else 
+         if(media >= 5.00) {
+              System.out.println("O aluno está de recuperação");
+           }else
+             System.out.println("Reprovado");
 
 
 
