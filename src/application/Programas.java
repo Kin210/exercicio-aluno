@@ -15,40 +15,34 @@ import java.util.Scanner;
       Locale.setDefault(Locale.US);
       Scanner sc = new Scanner(System.in);
 
+       System.out.print("Quantas notas vc quer inserir? ");
+        int n = sc.nextInt();
 
-       System.out.println("Notas do Aluno:");
+          double[] vetor = new double[n];
 
-        double n1, n2, n3, n4, n5;
+          for(int i=0; i<vetor.length; i++) {
+            System.out.printf("Nota %s° :", (i + 1));
+            vetor[i] = sc.nextDouble();
+          }
 
-          System.out.print("1° Bimeste: ");
-           n1 = sc.nextDouble();
-          System.out.print("2° Bimeste: ");
-           n2 = sc.nextDouble();
-          System.out.print("3° Bimeste: ");
-           n3 = sc.nextDouble();
-          System.out.print("4° Bimeste: ");
-           n4 = sc.nextDouble();
-          System.out.print("Nota Final: ");
-           n5 = sc.nextDouble();
+         double media = 0.0;
 
-         double media = (n1 + n2 + n3 + n4 + n5) / 5;
+           for(int i=0; i<n; i++) { 
+             media += vetor[i];
+         }
 
-         System.out.printf("Media do aluno: %.2f%n", media);
+           Double avg = media / 5;
+
+          System.out.printf("Media do aluno: %.2f%n", avg);
          
-         if (media >= 7.00) {
+         if (avg >= 7.00) {   
             System.out.println("Aprovado");
            }else 
-         if(media >= 5.00) {
+         if(avg >= 5.00) {
               System.out.println("O aluno está de recuperação");
            }else
              System.out.println("Reprovado");
-
-
-
-        
-         
-
-      
+  
       sc.close();
     
     
