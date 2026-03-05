@@ -31,7 +31,7 @@ import java.util.Scanner;
              media += vetor[i];
          }
 
-           Double avg = media / 5;
+           double avg = media / n;
 
           System.out.printf("Media do aluno: %.2f%n", avg);
          
