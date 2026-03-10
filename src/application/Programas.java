@@ -15,37 +15,48 @@ import java.util.Scanner;
       Locale.setDefault(Locale.US);
       Scanner sc = new Scanner(System.in);
 
-       System.out.print("Quantas notas vc quer inserir? ");
-        int n = sc.nextInt();
+     
+      System.out.print("Nome do Aluno: ");
+      String name = sc.nextLine();
 
-          double[] vetor = new double[n];
+      System.out.print("Quantas notas vc quer inserir? ");
+      int n = sc.nextInt();
 
-          for(int i=0; i<vetor.length; i++) {
-            System.out.printf("Nota %s° :", (i + 1));
-            vetor[i] = sc.nextDouble();
-          }
+      double[] notas = new double[n];
 
-         double media = 0.0;
+      for(int i=0; i<n; i++) {
+        System.out.printf("Nota %s° :", (i + 1));
+        notas[i] = sc.nextDouble();
+      }
 
-           for(int i=0; i<n; i++) { 
-             media += vetor[i];
-         }
+      double media = 0.0;
 
-           double avg = media / n;
+      for(int i=0; i<n; i++) { 
+         media += notas[i];
+      }
 
-          System.out.printf("Media do aluno: %.2f%n", avg);
+      double mediaTotal = media / n;
+
+      System.out.printf("Media do aluno: %.2f%n", mediaTotal);
          
-         if (avg >= 7.00) {   
-            System.out.println("Aprovado");
-           }else 
-         if(avg >= 5.00) {
-              System.out.println("O aluno está de recuperação");
-           }else
-             System.out.println("Reprovado");
+      System.out.println();
+      System.out.print("O aluno " + name + " esta ");
+
+      if (mediaTotal >= 7.00) {   
+        System.out.println("Aprovado");
+      }
+      else {
+       if(mediaTotal >= 5.00) {
+          System.out.println("de recuperação");
+        } 
+       else  {
+         System.out.println("Reprovado");
+      }
+    }
   
+
       sc.close();
     
-    
-   }
-  
-}
+   
+    } 
+  }
