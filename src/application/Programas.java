@@ -14,47 +14,71 @@ import java.util.Scanner;
 
       Locale.setDefault(Locale.US);
       Scanner sc = new Scanner(System.in);
+      
 
-     
-      System.out.print("Nome do Aluno: ");
-      String name = sc.nextLine();
+      int n;
+      String name;
+      char resposta;
 
-      System.out.print("Quantas notas vc quer inserir? ");
-      int n = sc.nextInt();
 
-      double[] notas = new double[n];
 
-      for(int i=0; i<n; i++) {
-        System.out.printf("Nota %s° :", (i + 1));
-        notas[i] = sc.nextDouble();
-      }
+      do {
 
-      double media = 0.0;
+          System.out.print("Nome do Aluno: ");
+          name = sc.nextLine();
 
-      for(int i=0; i<n; i++) { 
+          System.out.print("Quantas notas vc quer inserir? ");
+           n = sc.nextInt();
+
+           double[] notas = new double[n];
+
+          for(int i=0; i<n; i++) {
+          System.out.printf("Nota %s° : ", (i + 1));
+          notas[i] = sc.nextDouble();
+        }   
+
+         
+        double media = 0.0;
+
+        for(int i=0; i<n; i++) { 
          media += notas[i];
       }
 
+    
+
       double mediaTotal = media / n;
 
-      System.out.printf("Media do aluno: %.2f%n", mediaTotal);
-         
-      System.out.println();
-      System.out.print("O aluno " + name + " esta ");
+      System.out.println("BOLETIM");
+      System.out.println("----------------------------");
+      System.out.println("Nome: " + name);
+      System.out.printf("Nota: %.2f%n", mediaTotal);
+      System.out.print("Status: ");
+      
 
+         
       if (mediaTotal >= 7.00) {   
         System.out.println("Aprovado");
+      } 
+       else { 
+          if(mediaTotal >= 5.00) {
+           System.out.println(" recuperação");
+         } 
+          else  {
+          System.out.println("Reprovado"); 
+         }
       }
-      else {
-       if(mediaTotal >= 5.00) {
-          System.out.println("de recuperação");
-        } 
-       else  {
-         System.out.println("Reprovado");
-      }
-    }
-  
 
+      System.out.println("----------------------------");
+
+
+          System.out.print("Quer adicionar mais um aluno? [Y/N] ");
+           resposta = sc.next().charAt(0);
+           sc.nextLine();
+           System.out.println();
+    } while (resposta == 'Y' || resposta == 'y');
+
+    System.out.println("Notas Fechadas");
+  
       sc.close();
     
    
