@@ -25,7 +25,8 @@ import java.util.Scanner;
       n = sc.nextInt();
 
       double[] media = new double[n];
-      String[] name = new String[50];
+
+      String[] name = new String[n];
 
       int i = 0;
 
@@ -56,26 +57,28 @@ import java.util.Scanner;
       System.out.println("BOLETIM: ");
 
       for (int j=0; j < i; j ++) {
-      System.out.println();
-      System.out.println("----------------------------");
-      System.out.println("Nome: " + name[j]);
-      System.out.printf("Nota: %.2f%n", media[j]);
-      System.out.print("Status: ");
+
+       System.out.println();
+       System.out.println("----------------------------");
+       System.out.println("Nome: " + name[j]);
+       System.out.printf("Nota: %.2f%n", media[j]);
+       System.out.print("Status: ");
       
 
          
-      if (media[j]>= 7.00) {   
+       if (media[j]>= 7.00) {   
         System.out.println("Aprovado");
-      } 
-       else { 
-          if(media[j] >= 5.00) {
-           System.out.println(" recuperação");
-         } 
-          else  {
-          System.out.println("Reprovado"); 
-         }
+       } 
+         else { 
+            if(media[j] >= 5.00) {
+             System.out.println(" recuperação");
+           } 
+            else  {
+            System.out.println("Reprovado"); 
+           }
+          }
       }
-      }
+        
 
       System.out.println("----------------------------");
 
@@ -84,5 +87,5 @@ import java.util.Scanner;
       sc.close();
     
    
-    } 
-  }
+    }
+   }
