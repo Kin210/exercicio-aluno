@@ -19,36 +19,33 @@ import java.util.Scanner;
       int n;
       char resposta;
 
+      double[] media = new double[50];
 
-      
-      System.out.print("Quantas notas vc quer inserir? ");
-      n = sc.nextInt();
-
-      double[] media = new double[n];
-
-      String[] name = new String[n];
+      String[] name = new String[50];
 
       int i = 0;
 
       do {
-
-           sc.nextLine();
            System.out.print("Nome do Aluno: ");
            name[i] = sc.nextLine();
+          
+           System.out.print("Quantas notas vc quer inserir? ");
+            n = sc.nextInt();
            
           double nota = 0.0;
-
 
           for(int j=0; j<n; j++) {
           System.out.printf("Nota %d : ", (j + 1));
            nota += sc.nextDouble();
         }   
 
-        media[i] = nota / n;
+           media[i] = nota / n;
 
           System.out.print("Quer adicionar mais um aluno? [Y/N] ");
            resposta = sc.next().charAt(0);
            sc.nextLine();
+
+           System.out.println();
 
            i++;
 
@@ -68,7 +65,7 @@ import java.util.Scanner;
          
        if (media[j]>= 7.00) {   
         System.out.println("Aprovado");
-       } 
+        } 
          else { 
             if(media[j] >= 5.00) {
              System.out.println(" recuperação");
